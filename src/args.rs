@@ -13,14 +13,18 @@ pub fn collect() -> Arg {
         type_gen: None,
     };
     let mut iter = env::args().peekable();
+    let arg = iter.next();
 
-    iter.next();
+    match arg.clone().unwrap_or_default().as_str() {
+        "init" => gen_arg.type_gen = arg,
+        _ => {},
+    }
 
     loop {
         let arg = iter.next();
 
+
         match arg.clone().unwrap_or_default().as_str() {
-            "init" => gen_arg.type_gen = arg.clone(),
             "--project" | "-p" => gen_arg.name = iter.next(),
             "--repo" | "-r" => gen_arg.repo = iter.next(),
             _ => {}
