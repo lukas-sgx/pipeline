@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/lukas-sgx/pipeline/compare/pipeline-v0.1.0...pipeline-v0.1.1) (2026-08-03)
+
+
+### Bug Fixes
+
+* resolve upload artifact -&gt; rust action ([e64ec3c](https://github.com/lukas-sgx/pipeline/commit/e64ec3c80b0e282c644164ab9342c30a123557d3))
+
 ## 0.1.0 (2026-08-03)
 
 
