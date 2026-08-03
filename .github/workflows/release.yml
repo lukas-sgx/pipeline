@@ -9,8 +9,6 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    container:
-      image: rust:latest
     environment: release
 
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
@@ -35,6 +33,14 @@ jobs:
           fetch-depth: 0
           ref: stable
 
+      - name: Install Rust Toolchain
+        if: ${{ steps.release.outputs.release_created }}
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache Cargo Dependencies
+        if: ${{ steps.release.outputs.release_created }}
+        uses: Swatinem/rust-cache@v2
+
       - name: Build & publish
         if: ${{ steps.release.outputs.release_created }}
         run: |
@@ -45,7 +51,7 @@ jobs:
         env:
             GH_TOKEN: ${{ github.token }}
         run: |
-          gh release upload ${{ steps.release.outputs.tag_name }} bin/*
+          gh release upload ${{ steps.release.outputs.tag_name }} target/release/pipeline
 
       - name: Publish to crates.io
         if: ${{ steps.release.outputs.release_created }}
