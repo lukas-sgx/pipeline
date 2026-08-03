@@ -2,7 +2,7 @@ name: Release Stable
 
 on:
   workflow_run:
-    workflows: ["Pipeline - CI"]
+    workflows: ["pipeline-gen - CI"]
     types: [completed]
     branches: [stable]
 
@@ -51,7 +51,7 @@ jobs:
         env:
             GH_TOKEN: ${{ github.token }}
         run: |
-          gh release upload ${{ steps.release.outputs.tag_name }} target/release/pipeline
+          gh release upload ${{ steps.release.outputs.tag_name }} target/release/pipeline-gen
 
       - name: Publish to crates.io
         if: ${{ steps.release.outputs.release_created }}

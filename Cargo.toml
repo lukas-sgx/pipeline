@@ -1,5 +1,5 @@
 [package]
-name = "pipeline"
+name = "pipeline-gen"
 version = "0.1.1"
 edition = "2024"
 

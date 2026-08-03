@@ -1,4 +1,4 @@
-# Contributing to pipeline
+# Contributing to pipeline-gen
 
 Thanks for considering a contribution. This project aims to make GameBoy Advance homebrew development accessible from Python, so contributions can range from Python tooling to low-level C/ASM bindings — both are equally valuable.
 
@@ -30,8 +30,8 @@ Be respectful, constructive, and patient — especially with newcomers to GBA ho
 ### Setup
 
 ```bash
-git clone https://github.com/lukas-sgx/pipeline.git
-cd pipeline
+git clone https://github.com/lukas-sgx/pipeline-gen.git
+cd pipeline-gen
 
 # Option A — devenv (recommended, match environment)
 devenv shell
@@ -60,9 +60,9 @@ cartridge hdr dump tests/fixtures/<some_rom>.gba
 
 <sup>†</sup> *Best-effort description inferred from commit history — confirm/correct if this doesn't match actual intent.*
 
-> **Note:** the build pipeline now runs on **CMake** (migrated from Makefile). Make sure CMake is available in your environment — `devenv shell` handles this automatically.
+> **Note:** the build pipeline-gen now runs on **CMake** (migrated from Makefile). Make sure CMake is available in your environment — `devenv shell` handles this automatically.
 
-If you're working on a new subsystem (e.g. Video/Audio/Input bindings, asset pipeline), check the [open issues](https://github.com/lukas-sgx/pipeline/issues) and the roadmap in the README first — most binding work is tracked under an `Area` label (`video`, `audio`, `input`, `asset-pipeline`, `core`).
+If you're working on a new subsystem (e.g. Video/Audio/Input bindings, asset pipeline-gen), check the [open issues](https://github.com/lukas-sgx/pipeline-gen/issues) and the roadmap in the README first — most binding work is tracked under an `Area` label (`video`, `audio`, `input`, `asset-pipeline-gen`, `core`).
 
 ## Development Workflow
 
@@ -146,4 +146,4 @@ Both are available from **Issues → New issue** on GitHub.
 
 ---
 
-Questions that aren't a bug or feature request can go in [Discussions](https://github.com/lukas-sgx/pipeline/discussions) instead of an issue.
+Questions that aren't a bug or feature request can go in [Discussions](https://github.com/lukas-sgx/pipeline-gen/discussions) instead of an issue.
