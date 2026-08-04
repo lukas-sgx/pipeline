@@ -2,7 +2,7 @@ name: Release Stable
 
 on:
   workflow_run:
-    workflows: ["pipeline-gen - CI"]
+    workflows: ["template - CI"]
     types: [completed]
     branches: [stable]
 
@@ -33,28 +33,14 @@ jobs:
           fetch-depth: 0
           ref: stable
 
-      - name: Install Rust Toolchain
-        if: ${{ steps.release.outputs.release_created }}
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: Cache Cargo Dependencies
-        if: ${{ steps.release.outputs.release_created }}
-        uses: Swatinem/rust-cache@v2
-
       - name: Build & publish
         if: ${{ steps.release.outputs.release_created }}
         run: |
-          cargo build -r
+          echo "build here"
 
       - name: Upload to GitHub Release
         if: ${{ steps.release.outputs.release_created }}
         env:
             GH_TOKEN: ${{ github.token }}
         run: |
-          gh release upload ${{ steps.release.outputs.tag_name }} target/release/pipeline-gen
-
-      - name: Publish to crates.io
-        if: ${{ steps.release.outputs.release_created }}
-        env:
-          CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
-        run: cargo publish
+          gh release upload ${{ steps.release.outputs.tag_name }} bin/*
