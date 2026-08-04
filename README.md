@@ -1,24 +1,24 @@
 <div align="center">
   <a href="https://github.com/lukas-sgx/">
-    <img src="https://github.com/lukas-sgx/pipeline/blob/main/assets/pipeline-logo.png?raw=true" alt="Logo" height="180" style="border-radius: 10px">
+    <img src="https://github.com/lukas-sgx/pipeline-gen/blob/main/assets/pipeline-gen-logo.png?raw=true" alt="Logo" height="180" style="border-radius: 10px">
   </a>
 
-  <h3 align="center">Pipeline</h3>
+  <h3 align="center">pipeline-gen</h3>
 
-  [![Crates version](https://img.shields.io/crates/v/pipeline-gen?style=for-the-badge)](https://pypi.org/project/pipeline-gen/)
-  [![Build Status](https://img.shields.io/github/actions/workflow/status/lukas-sgx/pipeline/ci.yml?style=for-the-badge)](https://github.com/lukas-sgx/pipeline/actions)
+  [![Crates version](https://img.shields.io/crates/v/pipeline-gen-gen?style=for-the-badge)](https://pypi.org/project/pipeline-gen-gen/)
+  [![Build Status](https://img.shields.io/github/actions/workflow/status/lukas-sgx/pipeline-gen/ci.yml?style=for-the-badge)](https://github.com/lukas-sgx/pipeline-gen/actions)
 
   <p align="center">
     Setup simply new repo.
     <br />
-    <a href="https://github.com/lukas-sgx/pipeline"><strong>Explore the repository »</strong></a>
+    <a href="https://github.com/lukas-sgx/pipeline-gen"><strong>Explore the repository »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/lukas-sgx/pipeline">View Demo</a>
+    <a href="https://github.com/lukas-sgx/pipeline-gen">View Demo</a>
     &middot;
-    <a href="https://github.com/lukas-sgx/pipeline/issues/new?template=bug-report.yml">Report Bug</a>
+    <a href="https://github.com/lukas-sgx/pipeline-gen/issues/new?template=bug-report.yml">Report Bug</a>
     &middot;
-    <a href="https://github.com/lukas-sgx/pipeline/issues/new?template=feature-request.yml">Request Feature</a>
+    <a href="https://github.com/lukas-sgx/pipeline-gen/issues/new?template=feature-request.yml">Request Feature</a>
   </p>
 </div>
 
@@ -49,7 +49,7 @@
 
 ## About The Project
 
-Building a pipeline application. It is designed to be lightweight, easy to understand, and ready to grow with custom processing logic.
+Building a pipeline-gen application. It is designed to be lightweight, easy to understand, and ready to grow with custom processing logic.
 
 ### Built With
 
@@ -68,8 +68,8 @@ You need Rust and Cargo installed on your system.
 #### Development mode (clone the repo, with local changes)
 1. Clone the repo
 ```sh
-git clone https://github.com/lukas-sgx/pipeline.git
-cd pipeline
+git clone https://github.com/lukas-sgx/pipeline-gen.git
+cd pipeline-gen
 ```
 2. Build and run the project
 ```sh
@@ -79,14 +79,14 @@ cargo run
 
 #### Release mode (stable version from Crates)
 ```sh
-cargo install pipeline-gen
+cargo install pipeline-gen-gen
 ```
 
 ## Usage
 
 Run the project with:
 ```sh
-pipeline-gen init
+pipeline-gen-gen init
 ```
 
 This will execute the entry point currently defined in `src/main.rs`.
@@ -97,10 +97,10 @@ This will execute the entry point currently defined in `src/main.rs`.
 
 - [ ] Basic Rust project scaffold
 - [ ] Cargo-based build and run workflow
-- [ ] Add pipeline logic
+- [ ] Add pipeline-gen logic
 - [ ] Expand CLI features
 
-See the [open issues](https://github.com/lukas-sgx/pipeline/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/lukas-sgx/pipeline-gen/issues) for a full list of proposed features (and known issues).
 
 ## Contributing
 
@@ -110,8 +110,8 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for setup instructions, commit conventi
 
 ### Top contributors:
 
-<a href="https://github.com/lukas-sgx/pipeline/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=lukas-sgx/pipeline" alt="contrib.rocks image" />
+<a href="https://github.com/lukas-sgx/pipeline-gen/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=lukas-sgx/pipeline-gen" alt="contrib.rocks image" />
 </a>
 
 ## License

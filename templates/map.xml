@@ -1,0 +1,24 @@
+<schema version="v0.0.1">
+    <dir source=".github">
+        <dir source="ISSUE_TEMPLATE">
+            <file source="config.yml" />
+            <file source="bug-report.yml" />
+            <file source="feature-request.md" />
+        </dir>
+        <dir source="PULL_REQUEST_TEMPLATE">
+            <file source="feature.md" />
+            <file source="hotfix.md" />
+            <file source="release.md" />
+        </dir>
+        <dir source="workflows">
+            <file source="ci.yml" />
+            <file source="release.yml" />
+        </dir>
+        <file source="CODEOWNERS" />
+    </dir>
+    <file source=".release-manifest.json" />
+    <file source=".gitignore" />
+    <file source="CONTRIBUTING.md" />
+    <file source="README.md" />
+    <file source="release-config.json" />
+</schema>

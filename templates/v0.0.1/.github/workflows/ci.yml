@@ -1,4 +1,4 @@
-name: pipeline-gen - CI
+name: template - CI
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v6
     - name: Build
       run: |
-        cargo build -r
+        echo "build here"
 
   open_pull_request:
       if: (github.ref_name == 'develop' || github.ref_name == 'staging') && github.event_name == 'push'
