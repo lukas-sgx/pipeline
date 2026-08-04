@@ -1,16 +1,19 @@
+use crate::schema::download_template;
+
 mod args;
+mod schema;
+mod variables;
 
-pub fn download_template() {
-}
-
-fn main() {
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
     let project = args::collect();
     
     if project.type_gen.is_none() {
         // init();
     } else {
         if project.type_gen.unwrap_or_default() == "init" {
-            download_template();
+            download_template().await?;
         }
     }
+    Ok(())
 }
