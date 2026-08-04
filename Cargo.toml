@@ -1,6 +1,11 @@
 [package]
-name = "pipeline"
+name = "pipeline-gen"
 version = "0.1.1"
 edition = "2024"
 
 [dependencies]
+reqwest = "0.13.4"
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+quick-xml = { version = "0.36", features = ["serialize"] }
+anyhow = "1.0.104"
