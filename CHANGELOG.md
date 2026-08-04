@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.1](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.0.0...pipeline-gen-v1.0.1) (2026-08-04)
+
+
+* release v1.0.1 ([907dffa](https://github.com/lukas-sgx/pipeline-gen/commit/907dffa9f90f096767e5a7a9df359b415c11ad7a))
+
+
+### New APIs / Features
+
+* add description & toml into manifest ([bf2089f](https://github.com/lukas-sgx/pipeline-gen/commit/bf2089f70ffd44489a85944b8a48073aa078d759))
+
 ## [1.0.0](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v0.1.1...pipeline-gen-v1.0.0) (2026-08-04)
 
 
