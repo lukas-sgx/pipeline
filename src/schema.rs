@@ -29,7 +29,7 @@ struct File {
     source: Option<String>,
 }
 
-fn parse_xml(data: &String) -> Schema {
+fn parse_xml(data: &str) -> Schema {
     from_str(data).unwrap()
 }
 

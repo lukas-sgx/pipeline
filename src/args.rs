@@ -19,6 +19,7 @@ pub fn collect() -> Arg {
 
     match arg.as_deref().unwrap_or_default() {
         "init" => gen_arg.type_gen = arg,
+        "create" => gen_arg.type_gen = arg,
         _ => {}
     }
 
