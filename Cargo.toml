@@ -3,6 +3,10 @@ name = "pipeline-gen"
 version = "1.0.0"
 edition = "2024"
 
+description = "Pipeline-gen is designed to be lightweight, easy to understand, and ready to grow with custom processing logic"
+
+license = "MIT"
+
 [dependencies]
 reqwest = "0.13.4"
 tokio = { version = "1", features = ["full"] }
