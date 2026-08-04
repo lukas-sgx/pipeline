@@ -1,7 +1,7 @@
-use tokio::fs;
-use serde::Deserialize;
-use quick_xml::de::from_str;
 use crate::variables;
+use quick_xml::de::from_str;
+use serde::Deserialize;
+use tokio::fs;
 
 #[derive(Deserialize)]
 struct Schema {
@@ -21,7 +21,6 @@ struct Dir {
     dirs: Vec<Dir>,
     #[serde(rename = "file", default)]
     files: Vec<File>,
-    
 }
 
 #[derive(Deserialize)]
@@ -35,29 +34,25 @@ fn parse_xml(data: &String) -> Schema {
 }
 
 async fn retrieve_map() -> Result<String, reqwest::Error> {
-    let resp = reqwest::get(variables::MAP_XML_PATH)
-        .await?;
+    let resp = reqwest::get(variables::MAP_XML_PATH).await?;
 
-    let text = resp.text()
-        .await?;
+    let text = resp.text().await?;
 
     Ok(text)
 }
 
 async fn download_file(version: &str, source: &String) -> anyhow::Result<()> {
     let path_file = format!("{}/{}/{}?raw=true", variables::STABLE_URL, version, source);
-    let resp = reqwest::get(path_file)
-        .await?;
+    let resp = reqwest::get(path_file).await?;
 
-    let text = resp.text()
-        .await?;
+    let text = resp.text().await?;
 
     fs::write(source, text).await?;
 
     Ok(())
 }
 
-async fn explore_dir(dirs: Vec<Dir> , path: String, version: &str) -> anyhow::Result<()> {
+async fn explore_dir(dirs: Vec<Dir>, path: String, version: &str) -> anyhow::Result<()> {
     for dir in dirs {
         let new_path = format!("{}/{}", path, dir.source.unwrap_or_default());
 
@@ -67,7 +62,7 @@ async fn explore_dir(dirs: Vec<Dir> , path: String, version: &str) -> anyhow::Re
             let source_path = format!("{}/{}", new_path, file.source.unwrap_or_default());
             download_file(version, &source_path).await?;
         }
-        Box::pin(explore_dir(dir.dirs, new_path, version)).await?; 
+        Box::pin(explore_dir(dir.dirs, new_path, version)).await?;
     }
     Ok(())
 }

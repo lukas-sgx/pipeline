@@ -7,7 +7,7 @@ mod variables;
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     let project = args::collect();
-    
+
     if project.type_gen.is_none() {
         // init();
     } else {
