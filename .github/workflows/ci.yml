@@ -34,6 +34,7 @@ jobs:
       uses: Swatinem/rust-cache@v2
     - name: Build - ${{ matrix.platform.name }}
       run: |
+        rustup target add ${{ matrix.platform.target }}
         cargo build -r --target ${{ matrix.platform.target }}
 
   open_pull_request:
