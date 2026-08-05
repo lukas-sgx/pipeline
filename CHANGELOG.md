@@ -1,5 +1,36 @@
 # Changelog
 
+## [1.0.2](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.0.1...pipeline-gen-v1.0.2) (2026-08-05)
+
+
+* release v1.0.2 ([662df56](https://github.com/lukas-sgx/pipeline-gen/commit/662df5649a01e588096309ea5ec9aa4af4822bd5))
+
+
+### New APIs / Features
+
+* add creation of progress bar ([bf63ca1](https://github.com/lukas-sgx/pipeline-gen/commit/bf63ca19c91b180a3acd93fcb5033127bbff2772))
+* add devenv ([288ef2a](https://github.com/lukas-sgx/pipeline-gen/commit/288ef2ab90df3d022588379ebd2a53dd3b68c4ac))
+* add indicatif package ([8613280](https://github.com/lukas-sgx/pipeline-gen/commit/86132801a3db741b94100ef7da75afa98907b047))
+* add progress bar -&gt; follow download files ([e27c8bf](https://github.com/lukas-sgx/pipeline-gen/commit/e27c8bf7941040e34017432936e525be1625fbae))
+* add repo & License file -&gt; manifest ([6cd318d](https://github.com/lukas-sgx/pipeline-gen/commit/6cd318d014311bff85b2f0766b522be0e9ba70a7))
+* add target before build ([63444e1](https://github.com/lukas-sgx/pipeline-gen/commit/63444e146074f80fb4e6f4fce9593bef09001548))
+* **ci-cd:** add publish artifacts ([f585443](https://github.com/lukas-sgx/pipeline-gen/commit/f585443a4abd0bef048d224e9ad3c69533e3b94e))
+* **ci-cd:** build on multi platform ([86b5369](https://github.com/lukas-sgx/pipeline-gen/commit/86b5369b2de695ab647cea735d25d71fb2df56a8))
+* **ci-cd:** implement build on several arch ([fc77f14](https://github.com/lukas-sgx/pipeline-gen/commit/fc77f1457ed33447f11ea8aa75663cb1f88b863d))
+* optimized release binaries ([db332b5](https://github.com/lukas-sgx/pipeline-gen/commit/db332b5445d2473211b3e001c9d982d5662758b6))
+* use cross instead of cargo ([fcc4ae1](https://github.com/lukas-sgx/pipeline-gen/commit/fcc4ae17b1fb1c99398796ea3bdc4fbc6c4d06ef))
+
+
+### Bug Fixes
+
+* platform target use name instead of target ([c056048](https://github.com/lukas-sgx/pipeline-gen/commit/c056048ed3d2ca69000de62df804b0c96da33de0))
+* rewrite of if -&gt; match ([775a0a2](https://github.com/lukas-sgx/pipeline-gen/commit/775a0a2ca267f0377fb5765167de374182e16e2f))
+* typo error on badge ([3a65543](https://github.com/lukas-sgx/pipeline-gen/commit/3a65543a53c6aa9411c8e62ec328f59b5232b3f8))
+* typo package ([1770f2f](https://github.com/lukas-sgx/pipeline-gen/commit/1770f2f5d44253e63b017628ea629d51290d3f6f))
+* update description ([b862bdf](https://github.com/lukas-sgx/pipeline-gen/commit/b862bdfe39b0536737f751cf514a07d026b68b47))
+* upload windows file ([e408712](https://github.com/lukas-sgx/pipeline-gen/commit/e4087127f02de5c967e80d530bc68d3ef464e33a))
+* use cache on each matrix ([a6cee80](https://github.com/lukas-sgx/pipeline-gen/commit/a6cee8023630a4312b15cf0d15bbfafdbe311b0f))
+
 ## [1.0.1](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.0.0...pipeline-gen-v1.0.1) (2026-08-04)
 
 
