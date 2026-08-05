@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.0.2...pipeline-gen-v1.0.3) (2026-08-05)
+
+
+### Bug Fixes
+
+* resolve issue on filename release ([a6ca805](https://github.com/lukas-sgx/pipeline-gen/commit/a6ca805fa80dbb31648a5573da6f42d07d927d24))
+
 ## [1.0.2](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.0.1...pipeline-gen-v1.0.2) (2026-08-05)
 
 
