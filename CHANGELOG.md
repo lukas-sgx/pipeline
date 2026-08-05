@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.0.4...pipeline-gen-v1.1.0) (2026-08-05)
+
+
+### New APIs / Features
+
+* add tag to action release ([fb351b5](https://github.com/lukas-sgx/pipeline-gen/commit/fb351b5c7d56c8d0fc03fda74d69c334053e837c))
+
 ## [1.0.4](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.0.3...pipeline-gen-v1.0.4) (2026-08-05)
 
 
