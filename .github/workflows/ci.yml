@@ -31,7 +31,7 @@ jobs:
             use-cross: false
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Install Rust Toolchain
       uses: dtolnay/rust-toolchain@stable
       with:
@@ -39,6 +39,8 @@ jobs:
 
     - name: Cache Cargo Dependencies
       uses: Swatinem/rust-cache@v2
+      with:
+        key: ${{ matrix.platform.target }}
       
     - name: Install Cross
       if: matrix.platform.use-cross
