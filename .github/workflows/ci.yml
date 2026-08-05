@@ -13,13 +13,57 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.platform.os || 'ubuntu-latest' }}
+    strategy:
+      matrix:
+        platform:
+          - name: linux-x86_64
+            target: x86_64-unknown-linux-musl
+            use-cross: true
+            output: pipeline-gen
+            
+          - name: linux-aarch64
+            target: aarch64-unknown-linux-musl
+            use-cross: true
+            output: pipeline-gen
+            
+          - name: windows-x86_64
+            os: windows-latest
+            target: x86_64-pc-windows-msvc
+            use-cross: false
+            output: pipeline-gen.exe
 
     steps:
     - uses: actions/checkout@v6
-    - name: Build
+    - name: Install Rust Toolchain
+      uses: dtolnay/rust-toolchain@stable
+      with:
+        targets: ${{ matrix.platform.target }}
+
+    - name: Cache Cargo Dependencies
+      uses: Swatinem/rust-cache@v2
+      with:
+        key: ${{ matrix.platform.target }}
+      
+    - name: Install Cross
+      if: matrix.platform.use-cross
+      run: cargo install cross
+
+    - name: Build - ${{ matrix.platform.name }}
       run: |
-        cargo build -r
+        if [ "${{ matrix.platform.use-cross }}" = "true" ]; then
+          cross build -r --target ${{ matrix.platform.target }}
+        else
+          cargo build -r --target ${{ matrix.platform.target }}
+        fi
+      shell: bash
+
+    - name: Push Build Artifacts
+      uses: actions/upload-artifact@v7
+      with:
+        name: pipeline-gen-${{ matrix.platform.name }}
+        path: target/${{ matrix.platform.target }}/release/${{ matrix.platform.output }}
+        retention-days: 5
 
   open_pull_request:
       if: (github.ref_name == 'develop' || github.ref_name == 'staging') && github.event_name == 'push'

@@ -5,7 +5,7 @@
 
   <h3 align="center">pipeline-gen</h3>
 
-  [![Crates version](https://img.shields.io/crates/v/pipeline-gen-gen?style=for-the-badge)](https://pypi.org/project/pipeline-gen-gen/)
+  [![Crates version](https://img.shields.io/crates/v/pipeline-gen?style=for-the-badge)](https://crates.io/crates/pipeline-gen/)
   [![Build Status](https://img.shields.io/github/actions/workflow/status/lukas-sgx/pipeline-gen/ci.yml?style=for-the-badge)](https://github.com/lukas-sgx/pipeline-gen/actions)
 
   <p align="center">
@@ -79,14 +79,14 @@ cargo run
 
 #### Release mode (stable version from Crates)
 ```sh
-cargo install pipeline-gen-gen
+cargo install pipeline-gen
 ```
 
 ## Usage
 
 Run the project with:
 ```sh
-pipeline-gen-gen init
+pipeline-gen init
 ```
 
 This will execute the entry point currently defined in `src/main.rs`.
