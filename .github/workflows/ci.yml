@@ -39,7 +39,7 @@ jobs:
       
     - name: Install Cross
       if: matrix.platform.use-cross
-      run: cargo install cross --git https://github.com
+      run: cargo install cross
 
     - name: Build - ${{ matrix.platform.name }}
       run: |
