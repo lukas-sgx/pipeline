@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.0.3...pipeline-gen-v1.0.4) (2026-08-05)
+
+
+### Bug Fixes
+
+* use uploaded artifacts -&gt; release ([cacc0cd](https://github.com/lukas-sgx/pipeline-gen/commit/cacc0cdc1f425f40218b8251b53dd87b659df182))
+
 ## [1.0.3](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.0.2...pipeline-gen-v1.0.3) (2026-08-05)
 
 
