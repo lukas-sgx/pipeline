@@ -95,7 +95,7 @@ jobs:
         retention-days: 5
 
     - name: Upload to GitHub Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v3
       with:
         files: pipeline-gen-${{ matrix.platform.name }}
       env:
