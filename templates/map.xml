@@ -1,9 +1,9 @@
-<schema version="v0.0.1">
+<schema version="v1.0.0">
     <dir source=".github">
         <dir source="ISSUE_TEMPLATE">
             <file source="config.yml" />
             <file source="bug-report.yml" />
-            <file source="feature-request.md" />
+            <file source="feature-request.yml" />
         </dir>
         <dir source="PULL_REQUEST_TEMPLATE">
             <file source="feature.md" />
