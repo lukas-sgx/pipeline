@@ -20,15 +20,18 @@ jobs:
           - name: linux-x86_64
             target: x86_64-unknown-linux-musl
             use-cross: true
-
+            output: pipeline-gen
+            
           - name: linux-aarch64
             target: aarch64-unknown-linux-musl
             use-cross: true
-
+            output: pipeline-gen
+            
           - name: windows-x86_64
             os: windows-latest
             target: x86_64-pc-windows-msvc
             use-cross: false
+            output: pipeline-gen.exe
 
     steps:
     - uses: actions/checkout@v6
@@ -56,10 +59,10 @@ jobs:
       shell: bash
 
     - name: Push Build Artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: pipeline-gen-${{ matrix.platform.name }}
-        path: target/${{ matrix.platform.target }}/release/pipeline-gen
+        path: target/${{ matrix.platform.target }}/release/${{ matrix.platform.output }}
         retention-days: 5
 
   open_pull_request:
