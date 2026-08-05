@@ -98,6 +98,7 @@ jobs:
       uses: softprops/action-gh-release@v3
       with:
         files: pipeline-gen-${{ matrix.platform.name }}
+        tag_name: ${{ needs.release.outputs.tag_name }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
