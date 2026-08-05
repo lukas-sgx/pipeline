@@ -13,13 +13,28 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.platform.os || 'ubuntu-latest' }}
+    strategy:
+      matrix:
+        platform:
+          - name: Linux x86_64
+            target: x86_64-unknown-linux-musl
+          - name: Linux aarch64
+            target: aarch64-unknown-linux-musl
 
+          - name: Windows x86_64
+            os: windows-latest
+            target: x86_64-pc-windows-msvc
     steps:
     - uses: actions/checkout@v6
-    - name: Build
+    - name: Install Rust Toolchain
+      uses: dtolnay/rust-toolchain@stable
+
+    - name: Cache Cargo Dependencies
+      uses: Swatinem/rust-cache@v2
+    - name: Build - ${{ matrix.platform.name }}
       run: |
-        cargo build -r
+        cargo build -r --target ${{ matrix.platform.name }}
 
   open_pull_request:
       if: (github.ref_name == 'develop' || github.ref_name == 'staging') && github.event_name == 'push'
