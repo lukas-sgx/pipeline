@@ -1,6 +1,6 @@
 [package]
 name = "pipeline-gen"
-version = "1.0.1"
+version = "1.0.2"
 edition = "2024"
 
 description = "Designed to be lightweight, easy to understand, and ready to grow with custom processing logic"
