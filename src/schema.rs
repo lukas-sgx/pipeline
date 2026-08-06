@@ -1,9 +1,9 @@
 use crate::{status, variables};
+use colorized::{Colors, colorize_this};
 use indicatif::MultiProgress;
 use quick_xml::de::from_str;
 use serde::Deserialize;
 use tokio::fs;
-use colorized::{colorize_this, Colors};
 
 #[derive(Deserialize)]
 struct Schema {
