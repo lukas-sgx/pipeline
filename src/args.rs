@@ -20,7 +20,13 @@ pub fn collect() -> Arg {
     match arg.as_deref().unwrap_or_default() {
         "init" => gen_arg.type_gen = arg,
         "create" => gen_arg.type_gen = arg,
-        _ => {}
+        "update" => gen_arg.type_gen = arg,
+        "delete" => gen_arg.type_gen = arg,
+        "help" => gen_arg.type_gen = arg,
+        "version" => gen_arg.type_gen = arg,
+        _ => {
+            gen_arg.type_gen = "help".to_string().into();
+        }
     }
 
     loop {
