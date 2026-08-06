@@ -20,7 +20,7 @@ fn display_commands() {
     let cmd_update = format!("    {:<10} {}", "update", "upgrade to the latest version");
     let cmd_version = format!("    {:<10} {}", "version", "show version");
     let cmd_help = format!("    {:<10} {}", "help", "show this pannel");
-    
+
     display_section_title("Commands:");
     display_section_minus(&cmd_init);
     display_section_minus(&cmd_update);

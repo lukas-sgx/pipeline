@@ -6,6 +6,7 @@ edition = "2024"
 description = "Designed to be lightweight, easy to understand, and ready to grow with custom processing logic"
 repository = "https://github.com/lukas-sgx/pipeline-gen"
 license = "MIT"
+authors = ["lukas-sgx <lukas.soigneux@epitech.eu>"]
 
 [dependencies]
 reqwest = "0.13.4"
