@@ -4,6 +4,7 @@ mod args;
 mod schema;
 mod status;
 mod variables;
+mod help;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -11,8 +12,9 @@ async fn main() -> anyhow::Result<()> {
 
     match project.type_gen.as_deref().unwrap_or_default() {
         "init" => download_template().await?,
+        "version" => println!("pipeline-gen v{}", env!("CARGO_PKG_VERSION")),
         _ => {
-            download_template().await?;
+            help::help();
         }
     }
     Ok(())
