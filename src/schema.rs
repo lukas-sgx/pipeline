@@ -86,7 +86,7 @@ pub async fn download_template() -> anyhow::Result<()> {
 
     explore_dir(&mp, schema.dirs, String::from("."), schema.version.as_str()).await?;
 
-    repo_pb.finish_with_message("✔ Setup repository complete!");
+    repo_pb.finish_with_message("\r✔ Setup repository complete !");
 
     Ok(())
 }
