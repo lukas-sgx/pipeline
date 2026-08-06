@@ -3,6 +3,7 @@ use indicatif::MultiProgress;
 use quick_xml::de::from_str;
 use serde::Deserialize;
 use tokio::fs;
+use colorized::{colorize_this, Colors};
 
 #[derive(Deserialize)]
 struct Schema {
@@ -79,6 +80,8 @@ pub async fn download_template() -> anyhow::Result<()> {
     let schema = parse_xml(&map);
     let mp = MultiProgress::new();
     let repo_pb = status::new_progress(&mp, "Setup repository...");
+    let check = colorize_this("✔", Colors::GreenFg);
+    let message_finish = format!("\r{} Setup repository complete !", check);
 
     for file in schema.files {
         download_file(&mp, &schema.version, &file.source.unwrap_or_default()).await?;
@@ -86,7 +89,7 @@ pub async fn download_template() -> anyhow::Result<()> {
 
     explore_dir(&mp, schema.dirs, String::from("."), schema.version.as_str()).await?;
 
-    repo_pb.finish_with_message("\r✔ Setup repository complete !");
+    repo_pb.finish_with_message(message_finish);
 
     Ok(())
 }
