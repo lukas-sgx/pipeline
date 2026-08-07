@@ -3,7 +3,6 @@ use colorized::{Colors, colorize_this};
 use indicatif::MultiProgress;
 use tokio::fs;
 
-
 async fn retrieve_map() -> Result<String, reqwest::Error> {
     let resp = reqwest::get(models::variables::MAP_XML_PATH).await?;
     let text = resp.text().await?;
@@ -13,7 +12,12 @@ async fn retrieve_map() -> Result<String, reqwest::Error> {
 
 async fn download_file(mp: &MultiProgress, version: &str, source: &String) -> anyhow::Result<()> {
     let pb = status::new_progress(mp, format!("Download {}", source));
-    let path_file = format!("{}/{}/{}?raw=true", models::variables::STABLE_URL, version, source);
+    let path_file = format!(
+        "{}/{}/{}?raw=true",
+        models::variables::STABLE_URL,
+        version,
+        source
+    );
     let resp = reqwest::get(path_file).await?;
     let text = resp.text().await?;
 

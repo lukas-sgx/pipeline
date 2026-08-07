@@ -1,9 +1,7 @@
-
-
 mod args;
 mod commands;
-mod status;
 mod models;
+mod status;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
