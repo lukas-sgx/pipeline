@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.1](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.2.0...pipeline-gen-v1.2.1) (2026-08-07)
+
+
+### Bug Fixes
+
+* resolve issue on upload artifact to release ([c606fb6](https://github.com/lukas-sgx/pipeline-gen/commit/c606fb6e6dae5beb791473d6e725df47016efdb7))
+* update content ([727f7a7](https://github.com/lukas-sgx/pipeline-gen/commit/727f7a7d7f85c82119fc584566d86bf2b93b4783))
+* update description ([1d24a0c](https://github.com/lukas-sgx/pipeline-gen/commit/1d24a0c81feb30ff7a4c67da832e5fdcd29dd071))
+
 ## [1.2.0](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.1.0...pipeline-gen-v1.2.0) (2026-08-07)
 
 
