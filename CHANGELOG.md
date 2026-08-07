@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.2.0](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.1.0...pipeline-gen-v1.2.0) (2026-08-07)
+
+
+### New APIs / Features
+
+* add authors ([907d240](https://github.com/lukas-sgx/pipeline-gen/commit/907d24088dd2e9e8ad8a05ae8556ad7e03e76b53))
+* add authors field ([a428d6e](https://github.com/lukas-sgx/pipeline-gen/commit/a428d6e6360848eb66208f7e5862a17b2d22b079))
+* add color on check on finish ([6efe35a](https://github.com/lukas-sgx/pipeline-gen/commit/6efe35a27a77a913e15f13758c50e8e2b788e80d))
+* add default flag ([bd2999c](https://github.com/lukas-sgx/pipeline-gen/commit/bd2999c81dc5c57854f5a676c3e25c604783e566))
+* add download artifactifs befor upload to release ([424d9a5](https://github.com/lukas-sgx/pipeline-gen/commit/424d9a548fc63cd244a110bc667059d362a8ebb8))
+* add element with dash ([62cb7dd](https://github.com/lukas-sgx/pipeline-gen/commit/62cb7dd308bc3da817ee5cc2a34e07c844abd7c6))
+* add helper ([23621ab](https://github.com/lukas-sgx/pipeline-gen/commit/23621abdf578d590b9b77025c410c142a42a5cc5))
+* add sandbox ([8f8f1f1](https://github.com/lukas-sgx/pipeline-gen/commit/8f8f1f164df0fa3a34c0ffbf55668ca2a5fd8f20))
+* implement version of pkg ([aa698a6](https://github.com/lukas-sgx/pipeline-gen/commit/aa698a6701261ec5ba04028063963ee361d78dc8))
+
+
+### Bug Fixes
+
+* resolve carriage return on complete ([29587e6](https://github.com/lukas-sgx/pipeline-gen/commit/29587e676a71f63e2e93781a8cb9d8555bd1135b))
+
 ## [1.1.0](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.0.4...pipeline-gen-v1.1.0) (2026-08-05)
 
 
