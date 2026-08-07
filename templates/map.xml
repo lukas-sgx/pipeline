@@ -1,4 +1,4 @@
-<schema version="v1.0.0">
+<schema version="v1.0.1">
     <dir source=".github">
         <dir source="ISSUE_TEMPLATE">
             <file source="config.yml" />
@@ -13,6 +13,7 @@
         <dir source="workflows">
             <file source="ci.yml" />
             <file source="release.yml" />
+            <file source="audit.yml" />
         </dir>
         <file source="CODEOWNERS" />
     </dir>
