@@ -11,12 +11,7 @@ async fn main() -> anyhow::Result<()> {
 
     match project.type_gen.as_deref().unwrap_or_default() {
         "init" => commands::init::download_template().await?,
-        "version" => println!(
-            "{} v{} by {}",
-            env!("CARGO_PKG_NAME"),
-            env!("CARGO_PKG_VERSION"),
-            env!("CARGO_PKG_AUTHORS")
-        ),
+        "version" => commands::version::actual(),
         _ => {
             commands::helper::help();
         }
