@@ -12,3 +12,5 @@ devenv.local.yaml
 .pre-commit-config.yaml
 
 sandbox
+
+devenv*
