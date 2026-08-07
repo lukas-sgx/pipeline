@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.2.1...pipeline-gen-v1.3.0) (2026-08-07)
+
+
+### New APIs / Features
+
+* add cargo audit check security issues ([320a52b](https://github.com/lukas-sgx/pipeline-gen/commit/320a52b7d402f67e115eadf73f0a3f1a92e894c4))
+* add template security audit CI ([946648a](https://github.com/lukas-sgx/pipeline-gen/commit/946648a059220b290bd10e1463763ce33b3a9c19))
+
+
+### Bug Fixes
+
+* resolve filename issue on artifact creation ([5ff005e](https://github.com/lukas-sgx/pipeline-gen/commit/5ff005e87c179003fc86be07ea6c23a46ca4a084))
+
 ## [1.2.1](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.2.0...pipeline-gen-v1.2.1) (2026-08-07)
 
 
