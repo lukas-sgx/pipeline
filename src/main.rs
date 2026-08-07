@@ -1,25 +1,17 @@
-use crate::schema::download_template;
-
 mod args;
-mod help;
-mod schema;
+mod commands;
+mod models;
 mod status;
-mod variables;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     let project = args::collect();
 
     match project.type_gen.as_deref().unwrap_or_default() {
-        "init" => download_template().await?,
-        "version" => println!(
-            "{} v{} by {}",
-            env!("CARGO_PKG_NAME"),
-            env!("CARGO_PKG_VERSION"),
-            env!("CARGO_PKG_AUTHORS")
-        ),
+        "init" => commands::init::download_template().await?,
+        "version" => commands::version::actual(),
         _ => {
-            help::help();
+            commands::helper::help();
         }
     }
     Ok(())

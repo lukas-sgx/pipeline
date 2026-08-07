@@ -1,42 +1,10 @@
-use crate::{status, variables};
+use crate::{models, status};
 use colorized::{Colors, colorize_this};
 use indicatif::MultiProgress;
-use quick_xml::de::from_str;
-use serde::Deserialize;
 use tokio::fs;
 
-#[derive(Deserialize)]
-struct Schema {
-    #[serde(rename = "@version")]
-    version: String,
-    #[serde(rename = "dir", default)]
-    dirs: Vec<Dir>,
-    #[serde(rename = "file", default)]
-    files: Vec<File>,
-}
-
-#[derive(Deserialize)]
-struct Dir {
-    #[serde(rename = "@source")]
-    source: Option<String>,
-    #[serde(rename = "dir", default)]
-    dirs: Vec<Dir>,
-    #[serde(rename = "file", default)]
-    files: Vec<File>,
-}
-
-#[derive(Deserialize)]
-struct File {
-    #[serde(rename = "@source")]
-    source: Option<String>,
-}
-
-fn parse_xml(data: &str) -> Schema {
-    from_str(data).unwrap()
-}
-
 async fn retrieve_map() -> Result<String, reqwest::Error> {
-    let resp = reqwest::get(variables::MAP_XML_PATH).await?;
+    let resp = reqwest::get(models::variables::MAP_XML_PATH).await?;
     let text = resp.text().await?;
 
     Ok(text)
@@ -44,7 +12,12 @@ async fn retrieve_map() -> Result<String, reqwest::Error> {
 
 async fn download_file(mp: &MultiProgress, version: &str, source: &String) -> anyhow::Result<()> {
     let pb = status::new_progress(mp, format!("Download {}", source));
-    let path_file = format!("{}/{}/{}?raw=true", variables::STABLE_URL, version, source);
+    let path_file = format!(
+        "{}/{}/{}?raw=true",
+        models::variables::STABLE_URL,
+        version,
+        source
+    );
     let resp = reqwest::get(path_file).await?;
     let text = resp.text().await?;
 
@@ -57,7 +30,7 @@ async fn download_file(mp: &MultiProgress, version: &str, source: &String) -> an
 
 async fn explore_dir(
     mp: &MultiProgress,
-    dirs: Vec<Dir>,
+    dirs: Vec<models::schema::Dir>,
     path: String,
     version: &str,
 ) -> anyhow::Result<()> {
@@ -77,7 +50,7 @@ async fn explore_dir(
 
 pub async fn download_template() -> anyhow::Result<()> {
     let map = retrieve_map().await?;
-    let schema = parse_xml(&map);
+    let schema = models::schema::parse_xml(&map);
     let mp = MultiProgress::new();
     let repo_pb = status::new_progress(&mp, "Setup repository...");
     let check = colorize_this("✔", Colors::GreenFg);

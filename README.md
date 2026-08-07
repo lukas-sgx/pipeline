@@ -49,7 +49,7 @@
 
 ## About The Project
 
-Building a pipeline-gen application. It is designed to be lightweight, easy to understand, and ready to grow with custom processing logic.
+Repository and pipelines setup in less than a minute.
 
 ### Built With
 
@@ -73,7 +73,6 @@ cd pipeline-gen
 ```
 2. Build and run the project
 ```sh
-cargo build
 cargo run
 ```
 
@@ -94,11 +93,6 @@ This will execute the entry point currently defined in `src/main.rs`.
 *For more advanced examples, please refer to the repository structure and adapt the code as needed.*
 
 ## Roadmap
-
-- [ ] Basic Rust project scaffold
-- [ ] Cargo-based build and run workflow
-- [ ] Add pipeline-gen logic
-- [ ] Expand CLI features
 
 See the [open issues](https://github.com/lukas-sgx/pipeline-gen/issues) for a full list of proposed features (and known issues).
 
