@@ -3,6 +3,6 @@ pub fn actual() {
         "{} v{} by {}",
         env!("CARGO_PKG_NAME"),
         env!("CARGO_PKG_VERSION"),
-        env!("CARGO_PKG_AUTHORS")
+        colorized::colorize_this(env!("CARGO_PKG_AUTHORS"), colorized::Colors::CyanFg),
     )
 }
