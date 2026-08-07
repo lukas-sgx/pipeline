@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.3.2](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.3.1...pipeline-gen-v1.3.2) (2026-08-07)
+
+
+* release v1.3.2 ([48bee7e](https://github.com/lukas-sgx/pipeline-gen/commit/48bee7e1a285066f61895417938470b5a932b4bd))
+
 ## [1.3.1](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.3.0...pipeline-gen-v1.3.1) (2026-08-07)
 
 
