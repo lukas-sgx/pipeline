@@ -85,13 +85,14 @@ jobs:
         else
           cargo build -r --target ${{ matrix.platform.target }}
         fi
+        cp ./target/${{ matrix.platform.target }}/${{ matrix.platform.output }} ./target/${{ matrix.platform.target }}/${{ matrix.platform.release }}
       shell: bash
 
     - name: Push Build Artifacts
       uses: actions/upload-artifact@v7
       with:
         name: ${{ matrix.platform.release }}
-        path: target/${{ matrix.platform.target }}/release/${{ matrix.platform.output }}
+        path: target/${{ matrix.platform.target }}/release/${{ matrix.platform.release }}
         retention-days: 5
 
     - name: Download Artifacts
