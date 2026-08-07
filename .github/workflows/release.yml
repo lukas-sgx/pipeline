@@ -90,14 +90,19 @@ jobs:
     - name: Push Build Artifacts
       uses: actions/upload-artifact@v7
       with:
-        name: pipeline-gen-${{ matrix.platform.name }}
+        name: ${{ matrix.platform.release }}
         path: target/${{ matrix.platform.target }}/release/${{ matrix.platform.output }}
         retention-days: 5
+
+    - name: Download Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: ${{ matrix.platform.release }}
 
     - name: Upload to GitHub Release
       uses: softprops/action-gh-release@v3
       with:
-        files: pipeline-gen-${{ matrix.platform.name }}
+        files: ${{ matrix.platform.release }}
         tag_name: ${{ needs.release.outputs.tag_name }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

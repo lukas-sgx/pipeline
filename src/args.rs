@@ -18,9 +18,14 @@ pub fn collect() -> Arg {
     let arg = iter.next();
 
     match arg.as_deref().unwrap_or_default() {
-        "init" => gen_arg.type_gen = arg,
-        "create" => gen_arg.type_gen = arg,
-        _ => {}
+        "init" | "--init" => gen_arg.type_gen = arg,
+        "create" | "--create" => gen_arg.type_gen = arg,
+        "update" | "--update" => gen_arg.type_gen = arg,
+        "delete" | "--delete" => gen_arg.type_gen = arg,
+        "version" | "--version" => gen_arg.type_gen = arg,
+        _ => {
+            gen_arg.type_gen = "help".to_string().into();
+        }
     }
 
     loop {
