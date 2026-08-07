@@ -33,4 +33,5 @@ pub fn help() {
 
     display_usage();
     display_commands();
+    println!();
 }
