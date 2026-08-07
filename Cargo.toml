@@ -1,6 +1,6 @@
 [package]
 name = "pipeline-gen"
-version = "1.3.1"
+version = "1.3.2"
 edition = "2024"
 
 description = "Repository and pipelines setup in less than a minute"
