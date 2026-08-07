@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.3.0...pipeline-gen-v1.3.1) (2026-08-07)
+
+
+### Bug Fixes
+
+* update release bin path ([a22a99e](https://github.com/lukas-sgx/pipeline-gen/commit/a22a99ebb791d2f4761cc44491c9a56d77bbae7e))
+
 ## [1.3.0](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.2.1...pipeline-gen-v1.3.0) (2026-08-07)
 
 
