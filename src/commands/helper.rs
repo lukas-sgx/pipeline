@@ -16,10 +16,10 @@ fn display_usage() {
 }
 
 fn display_commands() {
-    let cmd_init = format!("    {:<10} {}", "init", "setup repo properly");
-    let cmd_update = format!("    {:<10} {}", "update", "upgrade to the latest version");
-    let cmd_version = format!("    {:<10} {}", "version", "show version");
-    let cmd_help = format!("    {:<10} {}", "help", "show this pannel");
+    let cmd_init = format!("    {:<12} {}", "init", "setup repo properly");
+    let cmd_update = format!("    {:<12} {}", "update", "upgrade to the latest version");
+    let cmd_version = format!("    {:<12} {}", "version", "show version");
+    let cmd_help = format!("    {:<12} {}", "help", "show this pannel");
 
     display_section_title("Commands:");
     display_section_minus(&cmd_init);
@@ -33,4 +33,5 @@ pub fn help() {
 
     display_usage();
     display_commands();
+    println!();
 }
