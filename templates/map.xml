@@ -1,4 +1,4 @@
-<schema version="v1.0.1">
+<schema version="v1.0.2">
     <dir source=".github">
         <dir source="ISSUE_TEMPLATE">
             <file source="config.yml" />
@@ -13,9 +13,11 @@
         <dir source="workflows">
             <file source="ci.yml" />
             <file source="release.yml" />
+            <file source="pre-release.yml" />
             <file source="audit.yml" />
         </dir>
         <file source="CODEOWNERS" />
+        <file source="dependabot.yml" />
     </dir>
     <file source=".release-manifest.json" />
     <file source=".gitignore" />
