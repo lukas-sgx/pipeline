@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.3](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.3.2...pipeline-gen-v1.3.3) (2026-08-13)
+
+
+* release 1.3.3 ([0d5f745](https://github.com/lukas-sgx/pipeline-gen/commit/0d5f745675937448f1f9fa8c7e8f8b2a1f6a91a6))
+
+
+### New APIs / Features
+
+* add color print on authors ([ca14876](https://github.com/lukas-sgx/pipeline-gen/commit/ca1487630d8ebf8095a0e28ebc97393d4aed2ff0))
+* add depndabot & pre-release workflow ([f117cc7](https://github.com/lukas-sgx/pipeline-gen/commit/f117cc76710cd69ba6fbc87b783e83f6ae7035d5))
+* handle "--" on command ([a5b0e26](https://github.com/lukas-sgx/pipeline-gen/commit/a5b0e2610db1baf62f710e02727261ecdee1da3f))
+
 ## [1.3.2](https://github.com/lukas-sgx/pipeline-gen/compare/pipeline-gen-v1.3.1...pipeline-gen-v1.3.2) (2026-08-07)
 
 
