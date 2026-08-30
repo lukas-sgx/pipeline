@@ -22,7 +22,7 @@ jobs:
         echo "build here"
 
   open_pull_request:
-      if: (github.ref_name == 'develop' || github.ref_name == 'staging') && github.event_name == 'push'
+      if: (github.ref_name == 'develop' || github.ref_name == 'main') && github.event_name == 'push'
       needs:
         - build
       runs-on: ubuntu-latest
@@ -30,7 +30,7 @@ jobs:
         pull-requests: write
         contents: read
       steps:
-        - uses: actions/checkout@v6
+        - uses: actions/checkout@v7
           with:
             fetch-depth: 0
 
@@ -38,10 +38,10 @@ jobs:
           env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           run: |
-            if [[ "${{ github.ref_name }}" == "staging" ]]; then
-                AHEAD_COMMITS=$(gh api repos/${{ github.repository }}/compare/main...${{ github.ref_name }} --jq '.ahead_by')
-            else
+            if [[ "${{ github.ref_name }}" == "main" ]]; then
                 AHEAD_COMMITS=$(gh api repos/${{ github.repository }}/compare/staging...${{ github.ref_name }} --jq '.ahead_by')
+            else
+                AHEAD_COMMITS=$(gh api repos/${{ github.repository }}/compare/main...${{ github.ref_name }} --jq '.ahead_by')
             fi
 
             if [ "$AHEAD_COMMITS" -eq 0 ]; then
@@ -52,12 +52,12 @@ jobs:
           env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           run: |
-            if [[ "${{ github.ref_name }}" == "staging" ]]; then
-                BASE_BRANCH="main"
-                COMPARE_TARGET="origin/main"
-            else
+            if [[ "${{ github.ref_name }}" == "main" ]]; then
                 BASE_BRANCH="staging"
                 COMPARE_TARGET="origin/staging"
+            else
+                BASE_BRANCH="main"
+                COMPARE_TARGET="origin/main"
             fi
 
             BACKLINE=$'\n'
